@@ -23,17 +23,8 @@ Web Site to present and show Portfolio
 
 ### Screenshot
 
-![Onboarding and Profile ](https://github.com/ecarfilaf/CourseraMetaLittleLemonApp/blob/master/assets/images/Onboarding_Profile.png?raw=true)
-![Home and Order-Dish](https://github.com/ecarfilaf/CourseraMetaLittleLemonApp/blob/master/assets/images/Order_Dish_Food.png?raw=true)
-
-### Links
-
-- Figma: [Desing](https://www.figma.com/design/ydj6Z2e8veTZE9uCdDuF3e/Coursera-Little-Lemon-App?node-id=141-23&p=f&t=wmTlevTGMEbWZPcK-0)
-- Github: [Code](https://github.com/ecarfilaf/CourseraMetaLittleLemonApp)
-- Demo : Scan the [QR Code](https://expo.dev/accounts/ecarfidev/projects/CourseraMetaLittleLemonApp/builds/5f20a9b9-9359-4628-a4a4-22f8081a2541) to see the demo.
 
 ## My process
-
 
 ## Author
 

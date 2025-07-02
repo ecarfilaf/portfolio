@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="/src/assets/favicon.ico" />
+
+	<!-- bootstrap 5.3.3 -->
+	<!-- <link rel="stylesheet" href="./css/bootstrap.rtl.min.css" type="text/css"> -->
+	<link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="./css/bootstrap-utilities.min.css" rel="stylesheet" type="text/css">
+	<!-- <script src="./js/bootstrap.min.js"></script> -->
+	<script src="./js/bootstrap.bundle.min.js"></script>
+
+	<!-- font Awesome 6.4.0 -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+	<!-- font Awesome -->
+	<!-- <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+	<!-- Ionicons -->
+	<!-- <link href="./css/ionicons.min.css" rel="stylesheet" type="text/css" /> -->
+
+	<link href="./css/dashboard.css" rel="stylesheet" type="text/css" />
+	<link href="./css/app.css" rel="stylesheet" type="text/css" />
+
+	<!-- JQuery  -->
+	<script src="js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<div class="sidebar-content js-simplebar simplebar-scrollable-y" data-simplebar="init">
+				<div class="simplebar-wrapper" style="margin: 0px;">
+					<div class="simplebar-height-auto-observer-wrapper">
+						<div class="simplebar-height-auto-observer"></div>
+					</div>
+					<div class="simplebar-mask">
+						<div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+							<div class="simplebar-content-wrapper" tabindex="0" role="region"
+								aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+								<div class="simplebar-content" style="padding: 0px;">
+									<a class="sidebar-brand" href="#">
+										<i class="bi bi-stack" style="color: cornflowerblue;"></i>
+										<span class="align-middle me-3">Dashboard</span>
+									</a>
+									<ul class="sidebar-nav">
+										<li class="sidebar-header">
+											Navigation
+										</li>
+										<li class="sidebar-item active">
+											<a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
+												<i class="fs-3 bi bi-sliders2-vertical"></i>
+												<span class="align-middle">Dashboards</span>
+												<span class="badge badge-sidebar-primary">5</span>
+											</a>
+											<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse"
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="default.html">Default</a></li>
+												<li class="sidebar-item active"><a class="sidebar-link"
+														href="analytics.html">Analytics</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="saas.html">SaaS</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="social.html">Social</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="crypto.html">Crypto</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-header">
+											Apps
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#ecommerce" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="shopping-bag"
+													class="lucide lucide-shopping-bag align-middle">
+													<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+													<path d="M3 6h18"></path>
+													<path d="M16 10a4 4 0 0 1-8 0"></path>
+												</svg> <span class="align-middle">E-Commerce</span>
+											</a>
+											<ul id="ecommerce" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ecommerce-products">
+														Products <span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ecommerce-products-details">
+														Product Details <span
+															class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ecommerce-orders">
+														Orders <span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ecommerce-customers">Customers</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ecommerce-invoice">Invoice</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ecommerce-pricing">Pricing</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#projects" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="layout" class="lucide lucide-layout align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+													<path d="M3 9h18"></path>
+													<path d="M9 21V9"></path>
+												</svg> <span class="align-middle">Projects</span>
+											</a>
+											<ul id="projects" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/projects-overview">Overview</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/projects-details">Details</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/chat">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="list" class="lucide lucide-list align-middle">
+													<line x1="8" x2="21" y1="6" y2="6"></line>
+													<line x1="8" x2="21" y1="12" y2="12"></line>
+													<line x1="8" x2="21" y1="18" y2="18"></line>
+													<line x1="3" x2="3.01" y1="6" y2="6"></line>
+													<line x1="3" x2="3.01" y1="12" y2="12"></line>
+													<line x1="3" x2="3.01" y1="18" y2="18"></line>
+												</svg> <span class="align-middle">Chat</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/file-manager">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="files" class="lucide lucide-files align-middle">
+													<path d="M20 7h-3a2 2 0 0 1-2-2V2"></path>
+													<path
+														d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z">
+													</path>
+													<path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8"></path>
+												</svg> <span class="align-middle">File Manager</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/calendar">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="calendar" class="lucide lucide-calendar align-middle">
+													<path d="M8 2v4"></path>
+													<path d="M16 2v4"></path>
+													<rect width="18" height="18" x="3" y="4" rx="2"></rect>
+													<path d="M3 10h18"></path>
+												</svg> <span class="align-middle">Calendar</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#email" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="mail" class="lucide lucide-mail align-middle">
+													<rect width="20" height="16" x="2" y="4" rx="2"></rect>
+													<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+												</svg> <span class="align-middle">Email</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+											<ul id="email" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/email-inbox">Inbox</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/email-details">Details</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#tasks" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="trello" class="lucide lucide-trello align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+													<rect width="3" height="9" x="7" y="7"></rect>
+													<rect width="3" height="5" x="14" y="7"></rect>
+												</svg> <span class="align-middle">Tasks</span>
+											</a>
+											<ul id="tasks" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link" href="/tasks-list">
+														List
+														<span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/tasks-kanban">Kanban</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-header">
+											Pages
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#pages" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="layout" class="lucide lucide-layout align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+													<path d="M3 9h18"></path>
+													<path d="M9 21V9"></path>
+												</svg> <span class="align-middle">Pages</span>
+											</a>
+											<ul id="pages" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/pages-profile">Profile</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/pages-settings">Settings</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/pages-blank">Blank Page</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#auth" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="users" class="lucide lucide-users align-middle">
+													<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+													<circle cx="9" cy="7" r="4"></circle>
+													<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+													<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+												</svg> <span class="align-middle">Auth</span>
+												<span class="badge badge-sidebar-secondary">Special</span>
+											</a>
+											<ul id="auth" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-sign-in">Sign In</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-sign-in-cover">Sign In Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-sign-up">Sign Up</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-sign-up-cover">Sign Up Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-reset-password">Reset Password</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-reset-password-cover">Reset Password Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-lock-screen">Lock Screen</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-lock-screen-cover">Lock Screen Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-2fa">2FA</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/auth-2fa-cover">2FA Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link" href="/auth-404">404
+														Page</a></li>
+												<li class="sidebar-item"><a class="sidebar-link" href="/auth-500">500
+														Page</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/landing" target="_blank">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="layout-template"
+													class="lucide lucide-layout-template align-middle">
+													<rect width="18" height="7" x="3" y="3" rx="1"></rect>
+													<rect width="9" height="7" x="3" y="14" rx="1"></rect>
+													<rect width="5" height="7" x="16" y="14" rx="1"></rect>
+												</svg> <span class="align-middle">Landing</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#docs" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="book-open"
+													class="lucide lucide-book-open align-middle">
+													<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+													<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+												</svg> <span class="align-middle">Documentation</span>
+											</a>
+											<ul id="docs" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/docs-introduction">Introduction</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/docs-installation">Getting Started</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/docs-customization">Customization</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/docs-plugins">Plugins</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/docs-changelog">Changelog</a></li>
+											</ul>
+										</li>
+
+										<li class="sidebar-header">
+											Plugins &amp; Addons
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#forms-plugins" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="check-square"
+													class="lucide lucide-check-square align-middle">
+													<path d="m9 11 3 3L22 4"></path>
+													<path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11">
+													</path>
+												</svg> <span class="align-middle">Form Plugins</span>
+											</a>
+											<ul id="forms-plugins" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/forms-advanced-inputs">Advanced Inputs</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/forms-editors">Editors</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/forms-validation">Validation</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/forms-wizard">Wizard</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#datatables" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="list" class="lucide lucide-list align-middle">
+													<line x1="8" x2="21" y1="6" y2="6"></line>
+													<line x1="8" x2="21" y1="12" y2="12"></line>
+													<line x1="8" x2="21" y1="18" y2="18"></line>
+													<line x1="3" x2="3.01" y1="6" y2="6"></line>
+													<line x1="3" x2="3.01" y1="12" y2="12"></line>
+													<line x1="3" x2="3.01" y1="18" y2="18"></line>
+												</svg> <span class="align-middle">DataTables</span>
+											</a>
+											<ul id="datatables" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/datatables-responsive">Responsive Table</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/datatables-buttons">Table with Buttons</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/datatables-column-search">Column Search</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/datatables-fixed-header">Fixed Header</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/datatables-multi">Multi Selection</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/datatables-ajax">Ajax Sourced Data</a></li>
+											</ul>
+										</li>
+
+										<li class="sidebar-item">
+											<a data-bs-target="#charts" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="pie-chart"
+													class="lucide lucide-pie-chart align-middle">
+													<path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+													<path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+												</svg> <span class="align-middle">Charts</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+											<ul id="charts" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/charts-chartjs">Chart.js</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/charts-apexcharts">ApexCharts <span
+															class="badge badge-sidebar-primary">New</span></a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/notifications">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="bell" class="lucide lucide-bell align-middle">
+													<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+													<path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+												</svg> <span class="align-middle">Notifications</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#maps" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="map-pin" class="lucide lucide-map-pin align-middle">
+													<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+													<circle cx="12" cy="10" r="3"></circle>
+												</svg> <span class="align-middle">Maps</span>
+											</a>
+											<ul id="maps" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/maps-google">Google Maps</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/maps-vector">Vector Maps</a></li>
+											</ul>
+										</li>
+
+										<li class="sidebar-header">
+											Tools &amp; Components
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#ui" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="grid" class="lucide lucide-grid align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+													<path d="M3 9h18"></path>
+													<path d="M3 15h18"></path>
+													<path d="M9 3v18"></path>
+													<path d="M15 3v18"></path>
+												</svg> <span class="align-middle">UI Elements</span>
+											</a>
+											<ul id="ui" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-alerts">Alerts</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-buttons">Buttons</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-cards">Cards</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-carousel">Carousel</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-embed-video">Embed Video</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-general">General <span
+															class="badge badge-sidebar-primary">10+</span></a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-grid">Grid</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-modals">Modals</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-offcanvas">Offcanvas</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-placeholders">Placeholders</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-tabs">Tabs</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/ui-typography">Typography</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#icons" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="heart" class="lucide lucide-heart align-middle">
+													<path
+														d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+													</path>
+												</svg> <span class="align-middle">Icons</span>
+												<span class="badge badge-sidebar-primary">1500+</span>
+											</a>
+											<ul id="icons" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/icons-lucide">Lucide</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/icons-font-awesome">Font Awesome</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#forms" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="check-square"
+													class="lucide lucide-check-square align-middle">
+													<path d="m9 11 3 3L22 4"></path>
+													<path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11">
+													</path>
+												</svg> <span class="align-middle">Forms</span>
+											</a>
+											<ul id="forms" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/forms-layouts">Layouts</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/forms-basic-inputs">Basic Inputs</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/forms-input-groups">Input Groups</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/forms-floating-labels">Floating Labels</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/tables">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="list" class="lucide lucide-list align-middle">
+													<line x1="8" x2="21" y1="6" y2="6"></line>
+													<line x1="8" x2="21" y1="12" y2="12"></line>
+													<line x1="8" x2="21" y1="18" y2="18"></line>
+													<line x1="3" x2="3.01" y1="6" y2="6"></line>
+													<line x1="3" x2="3.01" y1="12" y2="12"></line>
+													<line x1="3" x2="3.01" y1="18" y2="18"></line>
+												</svg> <span class="align-middle">Tables</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#multi" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="share-2" class="lucide lucide-share-2 align-middle">
+													<circle cx="18" cy="5" r="3"></circle>
+													<circle cx="6" cy="12" r="3"></circle>
+													<circle cx="18" cy="19" r="3"></circle>
+													<line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+													<line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+												</svg> <span class="align-middle">Multi Level</span>
+											</a>
+											<ul id="multi" class="sidebar-dropdown list-unstyled collapse"
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item">
+													<a data-bs-target="#multi-2" data-bs-toggle="collapse"
+														class="sidebar-link collapsed">
+														Two Levels
+													</a>
+													<ul id="multi-2" class="sidebar-dropdown list-unstyled collapse">
+														<li class="sidebar-item">
+															<a class="sidebar-link" data-bs-target="#">Item 1</a>
+															<a class="sidebar-link" data-bs-target="#">Item 2</a>
+														</li>
+													</ul>
+												</li>
+												<li class="sidebar-item">
+													<a data-bs-target="#multi-3" data-bs-toggle="collapse"
+														class="sidebar-link collapsed">
+														Three Levels
+													</a>
+													<ul id="multi-3" class="sidebar-dropdown list-unstyled collapse">
+														<li class="sidebar-item">
+															<a data-bs-target="#multi-3-1" data-bs-toggle="collapse"
+																class="sidebar-link collapsed">
+																Item 1
+															</a>
+															<ul id="multi-3-1"
+																class="sidebar-dropdown list-unstyled collapse">
+																<li class="sidebar-item">
+																	<a class="sidebar-link" data-bs-target="#">Item
+																		1</a>
+																	<a class="sidebar-link" data-bs-target="#">Item
+																		2</a>
+																</li>
+															</ul>
+														</li>
+														<li class="sidebar-item">
+															<a class="sidebar-link" data-bs-target="#">Item 2</a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<div class="sidebar-cta">
+										<div class="sidebar-cta-content">
+											<strong class="d-inline-block mb-2">Monthly Sales Report</strong>
+											<div class="mb-3 text-sm">
+												Your monthly sales report is ready for download!
+											</div>
+					
+											<div class="d-grid">
+												<a href="https://themes.getbootstrap.com/product/appstack-responsive-admin-template/" class="btn btn-primary" target="_blank">Download</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="simplebar-placeholder" style="width: 260px; height: 1643px;"></div>
+				</div>
+				<div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+					<div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+				</div>
+				<div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+					<div class="simplebar-scrollbar"
+						style="height: 232px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+				</div>
+			</div>
+		</nav>
+		<div class="main">
+			<div class="navbar navbar-expand navbar-bg">
+				<a class="sidebar-toggle">
+					<i class="hamburger align-self-center"></i>
+				</a>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fs-2 bi bi-envelope-fill"></i>
+								<span
+									class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success fs-5">4+</span>
+							</a>
+						</li>
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fs-2 bi bi-bell-fill"></i>
+								<span
+									class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-5">99+</span>
+							</a>
+						</li>
+						<li class="nav-item nav-theme-toggle dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="themeToggle">
+								<i class="fs-2 bi bi-moon-stars-fill lightmode"></i>
+								<i class="fs-2 bi bi-sun-fill darkmode"></i>
+							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-flag dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown"
+								aria-expanded="true">
+								<img src="./img/flags/us.jpg" alt="English">
+							</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"
+								data-bs-popper="static">
+								<a class="dropdown-item" href="#">
+									<img src="./img/flags/us.jpg" alt="English" width="20" class="align-middle me-1">
+									<span class="align-middle">English</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="./img/flags/spain.jpg" alt="Spanish" width="20" class="align-middle me-1">
+									<span class="align-middle">Spanish</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="./img/flags/germany.jpg" alt="German" width="20"
+										class="align-middle me-1">
+									<span class="align-middle">German</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="./img/flags/nl.png" alt="Dutch" width="20" class="align-middle me-1">
+									<span class="align-middle">Dutch</span>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+								<img src="./img/avatar5.png" class="img-fluid rounded-circle me-1 mt-n2 mb-n2" alt="Chris Wood" width="40" height="40">
+								<span>Chris Wood</span>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+								<li><a class="dropdown-item" href="#"><i class="bi bi-person-fill-gear fs-3 me-1"></i>
+										Profile</a>
+								</li>
+								<li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill fs-3 me-1"></i>
+										Settings</a></li>
+								<li>
+									<hr class="dropdown-divider" />
+								</li>
+								<li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right fs-3 me-1"></i>
+										Logout</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- App js -->
+	<script src="./js/Dashboard/app.js"></script>
+</body>
+
+</html>

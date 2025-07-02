@@ -1,0 +1,12 @@
+a {
+	text-decoration: none;
+}
+
+.dropdown-toggle::after {
+	content: none;
+}
+
+.hide{
+	display: none;
+	visibility: hidden;
+}

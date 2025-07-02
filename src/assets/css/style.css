@@ -1,0 +1,142 @@
+@import "responsive.scss";
+
+body {
+	font-family: Roboto, Monserrat, Geneva, Tahoma, sans-serif;
+	/* color: #333333; */
+	background-color: #021526;
+}
+
+a {
+	text-decoration: none;
+	color: #edefee;
+}
+
+.header {
+	background-color: #021526;
+	padding: 1rem 0;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 9999;
+	border: none;
+}
+
+.socialIcons {
+	display: flex;
+	justify-content: center;
+}
+
+.link-wrapper {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.link {
+	fill: #edefee;
+}
+
+.svgIcon {
+	width: 1.2rem;
+	height: 1.2rem;
+	margin: 5px;
+}
+
+#portfolio {
+	background-color: #495E57;
+	min-height: 30vh;
+}
+
+.card-fondo {
+	/* position: absolute; */
+	top: -10px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.8;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+  }
+
+
+#reviews {
+	background-color: #6EACDA;
+	/* height: 40vh; */
+	justify-content: center;
+	max-height: 45vh;
+	display: flex;
+	flex-direction: row;
+}
+
+.carouselreviews {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	max-width: 1440px;
+	
+}
+
+.invisible {
+	display: none;
+	visibility: hidden;
+}
+
+.carouselreviews button {
+	background: linear-gradient(-180deg, rgb(34, 150, 122) 0%, rgb(21, 77, 66) 96%);
+	box-shadow: rgba(21, 77, 66, 0.5) 0px 2px 6px 0px;
+	border-radius: 10px;
+	width: 36px;
+	height: 36px;
+	position: relative;
+	z-index: 10;
+	top: 20vh;
+}
+
+.testimonial {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin: 50px auto;
+	max-width: 600px;
+	min-width: 350px;
+	justify-items: center;
+}
+
+.testimonial img {
+	width: 100px;
+	height: 100px;
+	border-radius: 20%;
+	/* margin: 0 auto 20px; */
+	position: relative;
+	top: -50px;
+}
+
+.testimonial h2 {
+	color: #333;
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.testimonial p {
+	line-height: 1.6;
+	color: #666;
+}
+
+.testimonial .quote {
+	font-size: 36px;
+	color: #008cba;
+	margin-bottom: 10px;
+	font-weight: bolder;
+	justify-self: flex-start;
+}
+
+footer {
+	background-color: #6EACDA;
+	color: #edefee;
+	padding: 1rem 0;
+	fill: #edefee;
+}

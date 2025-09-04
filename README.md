@@ -28,6 +28,6 @@ Web Site to present and show Portfolio
 
 ## Author
 
-- Website - [Esteban Carfilaf](https://ecarfilaf.github.io/html-portfolio/personalsite/index.html)
+- Website - [Esteban Carfilaf](https://ecarfilaf.github.io/portfolio/)
 - LinkedIn - [@ecarfilaf](https://www.linkedin.com/in/ecarfilaf/)
 - X (Twitter) - [@ecarfilaf](https://x.com/ECarfilaf)

@@ -26,6 +26,7 @@ $('a').click(function() {
 			$('.darkmode').removeClass('hide');
 			$('html').attr('data-bs-theme', 'dark');
 		}
+
 		return;
 	}
 	if ($(this).attr('data-bs-toggle') == 'dropdown') {

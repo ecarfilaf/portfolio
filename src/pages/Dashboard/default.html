@@ -1,10 +1,1064 @@
 <!DOCTYPE html>
-<html>
+<html data-bs-theme="dark">
+
 <head>
+	<meta charset="UTF-8" />
 	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="/src/assets/favicon.ico" />
+
+	<!-- bootstrap 5.3.3 -->
+	<!-- <link rel="stylesheet" href="./css/bootstrap.rtl.min.css" type="text/css"> -->
+	<link href="/src/pages/Dashboard/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/src/pages/Dashboard/css/bootstrap-utilities.min.css" rel="stylesheet" type="text/css">
+	<!-- <script src="./js/bootstrap.min.js"></script> -->
+	<script src="/src/pages/Dashboard/js/bootstrap.bundle.min.js"></script>
+
+	<!-- font Awesome 6.4.0 -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+	<!-- font Awesome -->
+	<!-- <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+	<!-- Ionicons -->
+	<!-- <link href="./css/ionicons.min.css" rel="stylesheet" type="text/css" /> -->
+
+	<link href="/src/pages/Dashboard/css/dashboard.css" rel="stylesheet" type="text/css" />
+	<link href="/src/pages/Dashboard/css/app.css" rel="stylesheet" type="text/css" />
+	<link href="/src/pages/Dashboard/css/main.css" rel="stylesheet" type="text/css" />
+
+	<!-- JQuery  -->
+	<script src="/src/pages/Dashboard/js/jquery-3.7.1.min.js"></script>
+
+	<script type="module" crossorigin="" src="/src/pages/Dashboard/js/Dashboard/chartjs.js"></script>
+
 </head>
+
 <body>
-	<h1>Dashboard</h1>
-	<p>Welcome to the dashboard</p>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<div class="sidebar-content js-simplebar simplebar-scrollable-y" data-simplebar="init">
+				<div class="simplebar-wrapper" style="margin: 0px;">
+					<div class="simplebar-height-auto-observer-wrapper">
+						<div class="simplebar-height-auto-observer"></div>
+					</div>
+					<div class="simplebar-mask">
+						<div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+							<div class="simplebar-content-wrapper" tabindex="0" role="region"
+								aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+								<div class="simplebar-content" style="padding: 0px;">
+									<a class="sidebar-brand" href="/src/pages/Dashboard/index.html">
+										<i class="bi bi-stack" style="color: cornflowerblue;"></i>
+										<span class="align-middle me-3">Dashboard</span>
+									</a>
+									<ul class="sidebar-nav">
+										<li class="sidebar-header">
+											Navigation
+										</li>
+										<li class="sidebar-item active">
+											<a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
+												<i class="fs-3 bi bi-sliders2-vertical"></i>
+												<span class="align-middle">Dashboards</span>
+												<span class="badge badge-sidebar-primary">5</span>
+											</a>
+											<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse"
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/default.html">Default</a></li>
+												<li class="sidebar-item active">
+													<a class="sidebar-link" href="/src/pages/Dashboard/analytics.html">Analytics</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/saas.html">SaaS</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/social.html">Social</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/crypto.html">Crypto</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-header">
+											Apps
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#ecommerce" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="shopping-bag"
+													class="lucide lucide-shopping-bag align-middle">
+													<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+													<path d="M3 6h18"></path>
+													<path d="M16 10a4 4 0 0 1-8 0"></path>
+												</svg> <span class="align-middle">E-Commerce</span>
+											</a>
+											<ul id="ecommerce" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/products.html">
+														Products <span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/productsDetails.html">
+														Product Details <span
+															class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/orders.html">
+														Orders <span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/customers.html">Customers</a>
+												</li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/invoice.html">Invoice</a>
+												</li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/pricing.html">Pricing</a>
+												</li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#projects" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="layout" class="lucide lucide-layout align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+													<path d="M3 9h18"></path>
+													<path d="M9 21V9"></path>
+												</svg> <span class="align-middle">Projects</span>
+											</a>
+											<ul id="projects" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/layout/projects/overview.html">Overview</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/layout/projects/details.html">Details</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/src/pages/Dashboard/layout/chat.html">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="list" class="lucide lucide-list align-middle">
+													<line x1="8" x2="21" y1="6" y2="6"></line>
+													<line x1="8" x2="21" y1="12" y2="12"></line>
+													<line x1="8" x2="21" y1="18" y2="18"></line>
+													<line x1="3" x2="3.01" y1="6" y2="6"></line>
+													<line x1="3" x2="3.01" y1="12" y2="12"></line>
+													<line x1="3" x2="3.01" y1="18" y2="18"></line>
+												</svg> <span class="align-middle">Chat</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/src/pages/Dashboard/layout/filemanager.html">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="files" class="lucide lucide-files align-middle">
+													<path d="M20 7h-3a2 2 0 0 1-2-2V2"></path>
+													<path
+														d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z">
+													</path>
+													<path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8"></path>
+												</svg> <span class="align-middle">File Manager</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/src/pages/Dashboard/layout/calendar.html">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="calendar" class="lucide lucide-calendar align-middle">
+													<path d="M8 2v4"></path>
+													<path d="M16 2v4"></path>
+													<rect width="18" height="18" x="3" y="4" rx="2"></rect>
+													<path d="M3 10h18"></path>
+												</svg> <span class="align-middle">Calendar</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#email" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="mail" class="lucide lucide-mail align-middle">
+													<rect width="20" height="16" x="2" y="4" rx="2"></rect>
+													<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+												</svg> <span class="align-middle">Email</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+											<ul id="email" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/email/inbox.html">Inbox</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/email/details.html">Details</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#tasks" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="trello" class="lucide lucide-trello align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+													<rect width="3" height="9" x="7" y="7"></rect>
+													<rect width="3" height="5" x="14" y="7"></rect>
+												</svg> <span class="align-middle">Tasks</span>
+											</a>
+											<ul id="tasks" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link" href="/src/pages/Dashboard/layout/tasks/list.html">
+														List
+														<span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/tasks/kanban.html">Kanban</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-header">
+											Pages
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#pages" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="layout" class="lucide lucide-layout align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+													<path d="M3 9h18"></path>
+													<path d="M9 21V9"></path>
+												</svg> <span class="align-middle">Pages</span>
+											</a>
+											<ul id="pages" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/pages/profile.html">Profile</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/pages/settings.html">Settings</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#auth" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="users" class="lucide lucide-users align-middle">
+													<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+													<circle cx="9" cy="7" r="4"></circle>
+													<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+													<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+												</svg> <span class="align-middle">Auth</span>
+												<span class="badge badge-sidebar-secondary">Special</span>
+											</a>
+											<ul id="auth" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/signin.html">Sign In</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/signincover.html">Sign In Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-sign-up.html">Sign Up</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-sign-up-cover.html">Sign Up Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-reset-password.html">Reset Password</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-reset-password-cover.html">Reset Password Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-lock-screen.html">Lock Screen</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-lock-screen-cover.html">Lock Screen Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-2fa.html">2FA</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-2fa-cover.html">2FA Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link" href="/src/pages/Dashboard/layout/pages/auth/auth-404.html">404
+														Page</a></li>
+												<li class="sidebar-item"><a class="sidebar-link" href="/src/pages/Dashboard/layout/pages/auth/auth-500.html">500
+														Page</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="simplebar-placeholder" style="width: 260px; height: 1643px;"></div>
+				</div>
+				<div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+					<div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+				</div>
+				<div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+					<div class="simplebar-scrollbar"
+						style="height: 232px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+				</div>
+			</div>
+		</nav>
+		<div class="main">
+			<div class="navbar navbar-expand navbar-bg">
+				<a class="sidebar-toggle">
+					<i class="hamburger align-self-center"></i>
+				</a>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fs-2 bi bi-envelope-fill"></i>
+								<span
+									class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success fs-5">4+</span>
+							</a>
+							<div drop="end" aria-labelledby="messagesDropdown" data-bs-popper="static" class="dropdown-menu-lg py-0 dropdown-menu dropdown-menu-end">
+								<div class="dropdown-menu-header position-relative">4 New Messages</div>
+								<div class="list-group">
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar.png"
+													alt="Ashley Briggs"></div>
+											<div class="ps-2 col-10">
+												<div>Ashley Briggs</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+												<div class="text-muted small mt-1">15m ago</div>
+											</div>
+										</div>
+									</div>
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar2.png"
+													alt="Chris Wood"></div>
+											<div class="ps-2 col-10">
+												<div>Chris Wood</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</div>
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar3.png"
+													alt="Stacie Hall"></div>
+											<div class="ps-2 col-10">
+												<div>Stacie Hall</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
+												<div class="text-muted small mt-1">4h ago</div>
+											</div>
+										</div>
+									</div>
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar5.png"
+													alt="Bertha Martin"></div>
+											<div class="ps-2 col-10">
+												<div>Bertha Martin</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dropdown-menu-footer dropdown-header" role="heading"><span class="text-muted">Show all messages</span>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fs-2 bi bi-bell-fill"></i>
+								<span
+									class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-5">99+</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"
+								data-bs-popper="static">
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/us.jpg" alt="English" width="20" class="align-middle me-1">
+									<span class="align-middle">English</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/spain.jpg" alt="Spanish" width="20" class="align-middle me-1">
+									<span class="align-middle">Spanish</span>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item nav-theme-toggle dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="themeToggle">
+								<i class="fs-2 bi bi-moon-stars-fill lightmode"></i>
+								<i class="fs-2 bi bi-sun-fill darkmode"></i>
+							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-flag dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown"
+								aria-expanded="true">
+								<img src="/src/assets/img/portfolio/dashboard/flags/us.jpg" alt="English">
+							</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"
+								data-bs-popper="static">
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/us.jpg" alt="English" width="20" class="align-middle me-1">
+									<span class="align-middle">English</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/spain.jpg" alt="Spanish" width="20" class="align-middle me-1">
+									<span class="align-middle">Spanish</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/germany.jpg" alt="German" width="20"
+										class="align-middle me-1">
+									<span class="align-middle">German</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/nl.png" alt="Dutch" width="20" class="align-middle me-1">
+									<span class="align-middle">Dutch</span>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+								<img src="/src/pages/Dashboard/img/avatar.png" class="avatar img-fluid rounded-circle me-1 mt-n2 mb-n2" alt="Chris Wood" width="40" height="38">
+								<span>Chris Wood</span>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+								<li><a class="dropdown-item" href="#"><i class="bi bi-person-fill-gear fs-3 me-1"></i>
+										Profile</a>
+								</li>
+								<li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill fs-3 me-1"></i>
+										Settings</a></li>
+								<li>
+									<hr class="dropdown-divider" />
+								</li>
+								<li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right fs-3 me-1"></i>
+										Logout</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="content">
+				<div class="p-0 container-fluid">
+					<div class="mb-2 mb-xl-3 row">
+						<div class="d-none d-sm-block col-auto">
+							<h3>Dashboard</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="d-flex col-xxl-3 col-sm-6">
+							<div class="illustration flex-fill card">
+								<div class="p-0 d-flex flex-fill card-body">
+									<div class="g-0 w-100 row">
+										<div class="col-6">
+											<div class="illustration-text p-3 m-1">
+												<h4 class="illustration-text">Welcome back, Chris!</h4>
+												<p class="mb-0">Dashboard</p>
+											</div>
+										</div>
+										<div class="align-self-end text-end col-6"><img src="./img/customer-support.png" alt="Customer Support" class="img-fluid illustration-img"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex col-xxl-3 col-sm-6">
+							<div class="flex-fill card">
+								<div class=" py-4 card-body">
+									<div class="d-flex align-items-start">
+										<div class="flex-grow-1">
+											<h3 class="mb-2">$ 24.300</h3>
+											<p class="mb-2">Total Earnings</p>
+											<div class="mb-0"><span class="badge-subtle-success me-2 badge">+5.35%</span><span
+													class="text-muted">Since last week</span></div>
+										</div>
+										<div class="d-inline-block ms-3">
+											<div class="stat"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round"
+													class="lucide lucide-dollar-sign align-middle">
+													<line x1="12" x2="12" y1="2" y2="22"></line>
+													<path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+												</svg></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex col-xxl-3 col-sm-6">
+							<div class="flex-fill card">
+								<div class=" py-4 card-body">
+									<div class="d-flex align-items-start">
+										<div class="flex-grow-1">
+											<h3 class="mb-2">43</h3>
+											<p class="mb-2">Pending Orders</p>
+											<div class="mb-0"><span class="badge-subtle-danger me-2 badge">-4.25%</span><span
+													class="text-muted">Since last week</span></div>
+										</div>
+										<div class="d-inline-block ms-3">
+											<div class="stat"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round"
+													class="lucide lucide-shopping-bag align-middle">
+													<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+													<path d="M3 6h18"></path>
+													<path d="M16 10a4 4 0 0 1-8 0"></path>
+												</svg></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex col-xxl-3 col-sm-6">
+							<div class="flex-fill card">
+								<div class=" py-4 card-body">
+									<div class="d-flex align-items-start">
+										<div class="flex-grow-1">
+											<h3 class="mb-2">$ 18.700</h3>
+											<p class="mb-2">Total Revenue</p>
+											<div class="mb-0"><span class="badge-subtle-success me-2 badge">+8.65%</span><span
+													class="text-muted">Since last week</span></div>
+										</div>
+										<div class="d-inline-block ms-3">
+											<div class="stat"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round"
+													class="lucide lucide-dollar-sign align-middle">
+													<line x1="12" x2="12" y1="2" y2="22"></line>
+													<path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+												</svg></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="d-flex col-lg-8">
+							<div class="flex-fill w-100 card">
+								<div class="card-header">
+									<div class="card-actions float-end">
+										<div class="dropdown"><a class="-" id="react-aria8702366773-:r1e:"
+												aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis">
+													<circle cx="12" cy="12" r="1"></circle>
+													<circle cx="19" cy="12" r="1"></circle>
+													<circle cx="5" cy="12" r="1"></circle>
+												</svg></a></div>
+									</div>
+									<div class="mb-0 card-title h5">Sales / Revenue</div>
+								</div>
+								<div class="d-flex card-body">
+									<div class="align-self-center w-100">
+										<div class="chart chart-lg">
+											<canvas id="barChart" role="img" height="350" width="1024" style="display: block; box-sizing: border-box; height: 350px; width: 1024px;"></canvas>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex col-lg-4">
+							<div class="flex-fill w-100 card">
+								<div class="card-header">
+									<span class="float-end badge bg-info">Today</span>
+									<div class="mb-0 card-title h5">Daily feed</div>
+								</div>
+								<div class="card-body">
+									<div class="d-flex"><img src="./img/avatar.png" width="36" height="36"
+											class="rounded-circle me-2" alt="Ashley Briggs">
+										<div class="flex-grow-1"><small class="float-end text-navy">5m ago</small><strong>Ashley
+												Briggs</strong> started following <strong>Stacie Hall</strong><br><small
+												class="text-muted">Today 7:51 pm</small><br></div>
+									</div>
+									<hr>
+									<div class="d-flex"><img src="./img/avatar2.png" width="36" height="36"
+											class="rounded-circle me-2" alt="Chris Wood">
+										<div class="flex-grow-1"><small class="float-end text-navy">30m ago</small><strong>Chris
+												Wood</strong> posted something on <strong>Stacie Hall</strong>'s timeline<br><small
+												class="text-muted">Today 7:21 pm</small>
+											<div class="border text-sm text-muted p-2 mt-1">Etiam rhoncus. Maecenas tempus, tellus
+												eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing...</div>
+										</div>
+									</div>
+									<hr>
+									<div class="d-flex"><img src="./img/avatar3.png" width="36" height="36"
+											class="rounded-circle me-2" alt="Stacie Hall">
+										<div class="flex-grow-1"><small class="float-end text-navy">1h ago</small><strong>Stacie
+												Hall</strong> posted a new blog<br><small class="text-muted">Today 6:35 pm</small>
+										</div>
+									</div>
+									<hr>
+									<div class="d-grid"><button type="button" class="btn btn-primary">Load more</button></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="d-flex col-xl-4 col-lg-6">
+							<div class="flex-fill w-100 card">
+								<div class="card-header">
+									<div class="card-actions float-end">
+										<div class="dropdown"><a class="-" id="react-aria8702366773-:r1f:"
+												aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis">
+													<circle cx="12" cy="12" r="1"></circle>
+													<circle cx="19" cy="12" r="1"></circle>
+													<circle cx="5" cy="12" r="1"></circle>
+												</svg></a></div>
+									</div>
+									<div class="mb-0 card-title h5">Calendar</div>
+								</div>
+								<div class="d-flex card-body">
+									<div class="align-self-center w-100">
+										<div class="rdt rdtStatic rdtOpen">
+											<div class="rdtPicker">
+												<div class="rdtDays">
+													<table>
+														<thead>
+															<tr>
+																<th class="rdtPrev"><span> < </span></th>
+																<th class="rdtSwitch" colspan="5" data-value="8">September 2025</th>
+																<th class="rdtNext"><span> > </span></th>
+															</tr>
+															<tr>
+																<th class="dow">Su</th>
+																<th class="dow">Mo</th>
+																<th class="dow">Tu</th>
+																<th class="dow">We</th>
+																<th class="dow">Th</th>
+																<th class="dow">Fr</th>
+																<th class="dow">Sa</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td data-value="31" data-month="7" data-year="2025"
+																	class="rdtDay rdtOld">31</td>
+																<td data-value="1" data-month="8" data-year="2025" class="rdtDay">1
+																</td>
+																<td data-value="2" data-month="8" data-year="2025" class="rdtDay">2
+																</td>
+																<td data-value="3" data-month="8" data-year="2025" class="rdtDay">3
+																</td>
+																<td data-value="4" data-month="8" data-year="2025" class="rdtDay">4
+																</td>
+																<td data-value="5" data-month="8" data-year="2025" class="rdtDay">5
+																</td>
+																<td data-value="6" data-month="8" data-year="2025" class="rdtDay">6
+																</td>
+															</tr>
+															<tr>
+																<td data-value="7" data-month="8" data-year="2025" class="rdtDay">7
+																</td>
+																<td data-value="8" data-month="8" data-year="2025" class="rdtDay">8
+																</td>
+																<td data-value="9" data-month="8" data-year="2025" class="rdtDay">9
+																</td>
+																<td data-value="10" data-month="8" data-year="2025" class="rdtDay">
+																	10</td>
+																<td data-value="11" data-month="8" data-year="2025" class="rdtDay">
+																	11</td>
+																<td data-value="12" data-month="8" data-year="2025" class="rdtDay">
+																	12</td>
+																<td data-value="13" data-month="8" data-year="2025" class="rdtDay">
+																	13</td>
+															</tr>
+															<tr>
+																<td data-value="14" data-month="8" data-year="2025" class="rdtDay">
+																	14</td>
+																<td data-value="15" data-month="8" data-year="2025" class="rdtDay">
+																	15</td>
+																<td data-value="16" data-month="8" data-year="2025" class="rdtDay">
+																	16</td>
+																<td data-value="17" data-month="8" data-year="2025" class="rdtDay">
+																	17</td>
+																<td data-value="18" data-month="8" data-year="2025" class="rdtDay">
+																	18</td>
+																<td data-value="19" data-month="8" data-year="2025"
+																	class="rdtDay rdtToday">19</td>
+																<td data-value="20" data-month="8" data-year="2025" class="rdtDay">
+																	20</td>
+															</tr>
+															<tr>
+																<td data-value="21" data-month="8" data-year="2025" class="rdtDay">
+																	21</td>
+																<td data-value="22" data-month="8" data-year="2025" class="rdtDay">
+																	22</td>
+																<td data-value="23" data-month="8" data-year="2025" class="rdtDay">
+																	23</td>
+																<td data-value="24" data-month="8" data-year="2025" class="rdtDay">
+																	24</td>
+																<td data-value="25" data-month="8" data-year="2025" class="rdtDay">
+																	25</td>
+																<td data-value="26" data-month="8" data-year="2025" class="rdtDay">
+																	26</td>
+																<td data-value="27" data-month="8" data-year="2025" class="rdtDay">
+																	27</td>
+															</tr>
+															<tr>
+																<td data-value="28" data-month="8" data-year="2025" class="rdtDay">
+																	28</td>
+																<td data-value="29" data-month="8" data-year="2025" class="rdtDay">
+																	29</td>
+																<td data-value="30" data-month="8" data-year="2025" class="rdtDay">
+																	30</td>
+																<td data-value="1" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">1</td>
+																<td data-value="2" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">2</td>
+																<td data-value="3" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">3</td>
+																<td data-value="4" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">4</td>
+															</tr>
+															<tr>
+																<td data-value="5" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">5</td>
+																<td data-value="6" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">6</td>
+																<td data-value="7" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">7</td>
+																<td data-value="8" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">8</td>
+																<td data-value="9" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">9</td>
+																<td data-value="10" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">10</td>
+																<td data-value="11" data-month="9" data-year="2025"
+																	class="rdtDay rdtNew">11</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex col-xl-4 col-lg-6">
+							<div class="flex-fill w-100 card">
+								<div class="card-header">
+									<div class="card-actions float-end">
+										<div class="dropdown"><a class="-" id="react-aria8702366773-:r1g:"
+												aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis">
+													<circle cx="12" cy="12" r="1"></circle>
+													<circle cx="19" cy="12" r="1"></circle>
+													<circle cx="5" cy="12" r="1"></circle>
+												</svg></a></div>
+									</div>
+									<div class="mb-0 card-title h5">Weekly sales</div>
+								</div>
+								<div class="d-flex card-body">
+									<div class="align-self-center w-100">
+										<div class="py-3">
+											<div class="chart chart-xs">
+												<canvas  id="pieChart" role="img" height="134" width="500" style="display: block; box-sizing: border-box; height: 150px; width: 536px;"></canvas>
+											</div>
+										</div>
+										<table class="mb-0 table">
+											<thead>
+												<tr>
+													<th>Source</th>
+													<th class="text-end">Revenue</th>
+													<th class="text-end">Value</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<!-- <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square text-primary" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+															<path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"> </path>
+														</svg> -->
+														 Direct</td>
+													<td class="text-end">$ 2602</td>
+													<td class="text-end text-success">+43%</td>
+												</tr>
+												<tr>
+													<td>
+														<!-- <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square text-warning" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+															<path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"> </path>
+														</svg>  -->
+														Affiliate</td>
+													<td class="text-end">$ 1253</td>
+													<td class="text-end text-success">+13%</td>
+												</tr>
+												<tr>
+													<td>
+														<!-- <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square text-danger" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+															<path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"> </path>
+														</svg> -->
+														E-mail</td>
+													<td class="text-end">$ 541</td>
+													<td class="text-end text-success">+24%</td>
+												</tr>
+												<tr>
+													<td>
+														<!-- <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="square" class="svg-inline--fa fa-square text-dark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+															<path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96z"> </path>
+														</svg> -->
+														Other</td>
+													<td class="text-end">$ 1465</td>
+													<td class="text-end text-success">+11%</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="d-flex col-xl-4 col-lg-6">
+							<div class="flex-fill w-100 card">
+								<div class="card-header">
+									<div class="card-actions float-end">
+										<div class="dropdown"><a class="-" id="react-aria8702366773-:r1h:"
+												aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis">
+													<circle cx="12" cy="12" r="1"></circle>
+													<circle cx="19" cy="12" r="1"></circle>
+													<circle cx="5" cy="12" r="1"></circle>
+												</svg></a></div>
+									</div>
+									<div class="mb-0 card-title h5">Appointments</div>
+								</div>
+								<div class="d-flex card-body">
+									<ul class="timeline">
+										<li class="timeline-item"><strong>Chat with Carl and Ashley</strong><span
+												class="float-end text-muted text-sm">30m ago</span>
+											<p>Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet
+												iaculis, ipsum. Sed aliquam ultrices mauris...</p>
+										</li>
+										<li class="timeline-item"><strong>The big launch</strong><span
+												class="float-end text-muted text-sm">2h ago</span>
+											<p>Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget,
+												posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc...
+											</p>
+										</li>
+										<li class="timeline-item"><strong>Coffee break</strong><span
+												class="float-end text-muted text-sm">3h ago</span>
+											<p>Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
+												Maecenas malesuada...</p>
+										</li>
+										<li class="timeline-item"><strong>Chat with team</strong><span
+												class="float-end text-muted text-sm">4h ago</span>
+											<p class="mb-0">Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet
+												nec, imperdiet iaculis, ipsum...</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="flex-fill w-100 card">
+						<div class="card-header">
+							<div class="card-actions float-end">
+								<div class="dropdown"><a class="-" id="react-aria8702366773-:r1i:" aria-expanded="false"><svg
+											xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+											fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+											stroke-linejoin="round" class="lucide lucide-ellipsis">
+											<circle cx="12" cy="12" r="1"></circle>
+											<circle cx="19" cy="12" r="1"></circle>
+											<circle cx="5" cy="12" r="1"></circle>
+										</svg></a></div>
+							</div>
+							<div class="mb-0 card-title h5">Latest Projects</div>
+						</div>
+						<table class="my-0 table table-borderless">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th class="d-none d-xxl-table-cell">Company</th>
+									<th class="d-none d-xl-table-cell">Author</th>
+									<th>Status</th>
+									<th class="d-none d-xl-table-cell text-end">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="d-flex">
+											<div class="flex-shrink-0">
+												<div class="bg-body-tertiary rounded-2"><img class="p-2"
+														src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2044%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M22%2036.4667C28.8852%2036.4667%2034.4667%2030.8851%2034.4667%2024C34.4667%2017.1149%2028.8852%2011.5333%2022%2011.5333C15.1149%2011.5333%209.53335%2017.1149%209.53335%2024C9.53335%2030.8851%2015.1149%2036.4667%2022%2036.4667ZM22%2046C34.1503%2046%2044.0001%2036.1503%2044.0001%2024C44.0001%2011.8497%2034.1503%202%2022%202C9.84975%202%200%2011.8497%200%2024C0%2036.1503%209.84975%2046%2022%2046Z'%20fill='%236938EF'/%3e%3cpath%20d='M22.2518%2024.4817C24.5429%2022.1906%2028.2574%2022.1906%2030.5485%2024.4817L41.9565%2035.8897C44.2476%2038.1807%2044.2476%2041.8953%2041.9565%2044.1864C39.6654%2046.4775%2035.9509%2046.4775%2033.6598%2044.1864L22.2518%2032.7784C19.9607%2030.4873%2019.9607%2026.7727%2022.2518%2024.4817Z'%20fill='%23F670C7'/%3e%3cpath%20d='M25.455%2035.9817L32.7004%2043.2271C36.1755%2041.2889%2039.0708%2038.4359%2041.0605%2034.9938L33.8745%2027.8078C32.6123%2031.7472%2029.4441%2034.8336%2025.455%2035.9817Z'%20fill='%236519BA'/%3e%3c/svg%3e"
+														alt="Project Apollo"></div>
+											</div>
+											<div class="flex-grow-1 ms-3"><strong>Project Apollo</strong>
+												<div class="text-muted">Web, UI/UX Design</div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xxl-table-cell"><strong>Gantos</strong>
+										<div class="text-muted">Real Estate</div>
+									</td>
+									<td class="d-none d-xl-table-cell"><strong>Carl Jenkins</strong>
+										<div class="text-muted">HTML, JS, React</div>
+									</td>
+									<td>
+										<div class="d-flex flex-column w-100"><span class="me-2 mb-1 text-muted">65%</span>
+											<div class="progress-sm progress">
+												<div role="progressbar" class="progress-bar bg-success" aria-valuenow="65"
+													aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xl-table-cell text-end"><a role="button" tabindex="0" href="#"
+											class="btn btn-light">View</a></td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex">
+											<div class="flex-shrink-0">
+												<div class="bg-body-tertiary rounded-2"><img class="p-2"
+														src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2039%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M33.8808%2024C30.3264%2027.9713%2025.161%2030.4706%2019.4118%2030.4706C13.6627%2030.4706%208.49731%2027.9713%204.94287%2024C8.49731%2020.0287%2013.6627%2017.5294%2019.4118%2017.5294C25.161%2017.5294%2030.3264%2020.0287%2033.8808%2024Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M0%2036.9412C0%2026.2204%208.69097%2017.5294%2019.4118%2017.5294C13.6627%2017.5294%208.49733%2020.0287%204.94289%2024C8.49733%2027.9713%2013.6627%2030.4706%2019.4119%2030.4706C25.161%2030.4706%2030.3264%2027.9713%2033.8808%2024C36.9546%2027.4343%2038.8236%2031.9695%2038.8236%2036.9412V44.2745C38.8236%2045.2275%2038.0511%2046%2037.0981%2046H1.72549C0.77253%2046%200%2045.2275%200%2044.2745V36.9412ZM33.8808%2024C33.8808%2024%2033.8808%2024%2033.8808%2024V24Z'%20fill='%237CD4FD'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12.1307%2029.0589C9.35893%2027.9366%206.90537%2026.1926%204.94289%2024C8.49733%2020.0287%2013.6627%2017.5294%2019.4119%2017.5294C25.161%2017.5294%2030.3264%2020.0287%2033.8808%2024C33.8808%2024%2033.8808%2024%2033.8808%2024C36.9546%2020.5657%2038.8236%2016.0305%2038.8236%2011.0588V3.72549C38.8236%202.77253%2038.0511%202%2037.0981%202L1.7255%202C0.772532%202%207.24413e-07%202.77253%206.41103e-07%203.72549L0%2011.0588C-1.28945e-06%2019.2047%205.01756%2026.1788%2012.1307%2029.0589Z'%20fill='%230BA5EC'/%3e%3c/svg%3e"
+														alt="Project Bongo"></div>
+											</div>
+											<div class="flex-grow-1 ms-3"><strong>Project Bongo</strong>
+												<div class="text-muted">Web</div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xxl-table-cell"><strong>Adray Transportation</strong>
+										<div class="text-muted">Transportation</div>
+									</td>
+									<td class="d-none d-xl-table-cell"><strong>Bertha Martin</strong>
+										<div class="text-muted">HTML, JS, Vue</div>
+									</td>
+									<td>
+										<div class="d-flex flex-column w-100"><span class="me-2 mb-1 text-muted">33%</span>
+											<div class="progress-sm progress">
+												<div role="progressbar" class="progress-bar bg-danger" aria-valuenow="33"
+													aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xl-table-cell text-end"><a role="button" tabindex="0" href="#"
+											class="btn btn-light">View</a></td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex">
+											<div class="flex-shrink-0">
+												<div class="bg-body-tertiary rounded-2"><img class="p-2"
+														src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2036%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20.5333%2031.3333C28.6335%2031.3333%2035.2%2024.7668%2035.2%2016.6667C35.2%208.56649%2028.6335%202%2020.5333%202H0V31.3333H20.5333Z'%20fill='%23F38744'/%3e%3cpath%20d='M0%202L35.2%2046H11.7333L0%2031.3333V2Z'%20fill='%232E90FA'/%3e%3cpath%20d='M23.2637%2031.0796C22.379%2031.2462%2021.4664%2031.3333%2020.5333%2031.3333H0V2L23.2637%2031.0796Z'%20fill='%2353B1FD'/%3e%3c/svg%3e"
+														alt="Project Canary"></div>
+											</div>
+											<div class="flex-grow-1 ms-3"><strong>Project Canary</strong>
+												<div class="text-muted">Web, UI/UX Design</div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xxl-table-cell"><strong>Evans</strong>
+										<div class="text-muted">Insurance</div>
+									</td>
+									<td class="d-none d-xl-table-cell"><strong>Stacie Hall</strong>
+										<div class="text-muted">HTML, JS, Laravel</div>
+									</td>
+									<td>
+										<div class="d-flex flex-column w-100"><span class="me-2 mb-1 text-muted">50%</span>
+											<div class="progress-sm progress">
+												<div role="progressbar" class="progress-bar bg-warning" aria-valuenow="50"
+													aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xl-table-cell text-end"><a role="button" tabindex="0" href="#"
+											class="btn btn-light">View</a></td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex">
+											<div class="flex-shrink-0">
+												<div class="bg-body-tertiary rounded-2"><img class="p-2"
+														src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2044%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_601_14224)'%3e%3cpath%20d='M27.2694%204.12169L23.0486%202.99072L19.4917%2016.2654L16.2804%204.28093L12.0595%205.4119L15.5291%2018.3602L6.88724%209.71841L3.79738%2012.8083L13.2764%2022.2874L1.47179%2019.1243L0.34082%2023.3451L13.2388%2026.8011C13.0912%2026.1642%2013.0131%2025.5006%2013.0131%2024.8187C13.0131%2019.992%2016.9258%2016.0792%2021.7525%2016.0792C26.5792%2016.0792%2030.492%2019.992%2030.492%2024.8187C30.492%2025.4962%2030.4148%2026.1557%2030.269%2026.7889L41.9909%2029.9297L43.1218%2025.709L30.1725%2022.2392L41.9779%2019.0759L40.8469%2014.8551L27.8981%2018.3247L36.54%209.68293L33.4501%206.59307L24.1026%2015.9406L27.2694%204.12169Z'%20fill='%23FF4405'/%3e%3cpath%20d='M30.2567%2026.838C29.8948%2028.368%2029.1308%2029.7424%2028.0825%2030.8435L36.5745%2039.3357L39.6644%2036.2458L30.2567%2026.838Z'%20fill='%23FF4405'/%3e%3cpath%20d='M27.9968%2030.9323C26.9359%2032.0159%2025.5951%2032.8245%2024.0916%2033.2413L27.1817%2044.7735L31.4025%2043.6425L27.9968%2030.9323Z'%20fill='%23FF4405'/%3e%3cpath%20d='M23.934%2033.2835C23.2364%2033.4628%2022.5053%2033.5581%2021.7518%2033.5581C20.9446%2033.5581%2020.1629%2033.4486%2019.4208%2033.2437L16.3279%2044.7866L20.5487%2045.9175L23.934%2033.2835Z'%20fill='%23FF4405'/%3e%3cpath%20d='M19.2715%2033.2012C17.791%2032.7638%2016.4741%2031.9448%2015.4348%2030.8581L6.92192%2039.3711L10.0118%2042.4609L19.2715%2033.2012Z'%20fill='%23FF4405'/%3e%3cpath%20d='M15.3647%2030.7829C14.3432%2029.6893%2013.5992%2028.3333%2013.2451%2026.827L1.48486%2029.9781L2.61582%2034.1989L15.3647%2030.7829Z'%20fill='%23FF4405'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_601_14224'%3e%3crect%20width='44'%20height='44'%20fill='white'%20transform='translate(0%202)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+														alt="Project Edison"></div>
+											</div>
+											<div class="flex-grow-1 ms-3"><strong>Project Edison</strong>
+												<div class="text-muted">UI/UX Design</div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xxl-table-cell"><strong>Monsource Investment Group</strong>
+										<div class="text-muted">Finance</div>
+									</td>
+									<td class="d-none d-xl-table-cell"><strong>Carl Jenkins</strong>
+										<div class="text-muted">HTML, JS, React</div>
+									</td>
+									<td>
+										<div class="d-flex flex-column w-100"><span class="me-2 mb-1 text-muted">80%</span>
+											<div class="progress-sm progress">
+												<div role="progressbar" class="progress-bar bg-success" aria-valuenow="80"
+													aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xl-table-cell text-end"><a role="button" tabindex="0" href="#"
+											class="btn btn-light">View</a></td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex">
+											<div class="flex-shrink-0">
+												<div class="bg-body-tertiary rounded-2"><img class="p-2"
+														src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2044%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M22%2046C34.1503%2046%2044%2036.1503%2044%2024C44%2011.8497%2034.1503%202%2022%202C9.84971%202%200%2011.8497%200%2024C0%2036.1503%209.84971%2046%2022%2046ZM28.8632%2012.2485C29.1973%2011.0619%2028.0457%2010.3601%2026.994%2011.1094L12.3124%2021.5685C11.1718%2022.3811%2011.3512%2024%2012.5819%2024H16.448V23.9701H23.9828L17.8433%2026.1363L15.1368%2035.7515C14.8027%2036.9382%2015.9542%2037.6399%2017.006%2036.8906L31.6876%2026.4315C32.8282%2025.619%2032.6487%2024%2031.4181%2024H25.5553L28.8632%2012.2485Z'%20fill='%23155EEF'/%3e%3c/svg%3e"
+														alt="Project Indigo"></div>
+											</div>
+											<div class="flex-grow-1 ms-3"><strong>Project Indigo</strong>
+												<div class="text-muted">Web, UI/UX Design</div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xxl-table-cell"><strong>Edwards</strong>
+										<div class="text-muted">Retail</div>
+									</td>
+									<td class="d-none d-xl-table-cell"><strong>Ashley Briggs</strong>
+										<div class="text-muted">HTML, JS, Vue</div>
+									</td>
+									<td>
+										<div class="d-flex flex-column w-100"><span class="me-2 mb-1 text-muted">78%</span>
+											<div class="progress-sm progress">
+												<div role="progressbar" class="progress-bar bg-primary" aria-valuenow="78"
+													aria-valuemin="0" aria-valuemax="100" style="width: 78%;"></div>
+											</div>
+										</div>
+									</td>
+									<td class="d-none d-xl-table-cell text-end"><a role="button" tabindex="0" href="#"
+											class="btn btn-light">View</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="text-muted row">
+						<div class="text-start col-6">
+							<ul class="list-inline">
+								<li class="list-inline-item"><span class="text-muted" href="#">Support</span></li>
+								<li class="list-inline-item"><span class="text-muted" href="#">Help Center</span></li>
+								<li class="list-inline-item"><span class="text-muted" href="#">Privacy</span></li>
+								<li class="list-inline-item"><span class="text-muted" href="#">Terms of Service</span></li>
+							</ul>
+						</div>
+						<div class="text-end col-6">
+							<p class="mb-0">&copy; 2025 - <span href="/" class="text-muted">CM IT Consulting Services SpA</span></p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<!-- App js -->
+	<script src="/src/pages/Dashboard/js/Dashboard/app.js"></script>
 </body>
+
 </html>

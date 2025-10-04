@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="/src/assets/favicon.ico" />
+
+	<!-- bootstrap 5.3.3 -->
+	<!-- <link rel="stylesheet" href="./css/bootstrap.rtl.min.css" type="text/css"> -->
+	<link href="/src/pages/Dashboard/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/src/pages/Dashboard/css/bootstrap-utilities.min.css" rel="stylesheet" type="text/css">
+	<!-- <script src="./js/bootstrap.min.js"></script> -->
+	<script src="/src/pages/Dashboard/js/bootstrap.bundle.min.js"></script>
+
+	<!-- font Awesome 6.4.0 -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+	<!-- font Awesome -->
+	<!-- <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+	<!-- Ionicons -->
+	<!-- <link href="./css/ionicons.min.css" rel="stylesheet" type="text/css" /> -->
+
+	<link href="/src/pages/Dashboard/css/dashboard.css" rel="stylesheet" type="text/css" />
+	<link href="/src/pages/Dashboard/css/app.css" rel="stylesheet" type="text/css" />
+	<link href="/src/pages/Dashboard/css/main.css" rel="stylesheet" type="text/css" />
+
+	<!-- JQuery  -->
+	<script src="/src/pages/Dashboard/js/jquery-3.7.1.min.js"></script>
+
+	<script type="module" crossorigin="" src="/src/pages/Dashboard/js/Dashboard/chartjs.js"></script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<div class="sidebar-content js-simplebar simplebar-scrollable-y" data-simplebar="init">
+				<div class="simplebar-wrapper" style="margin: 0px;">
+					<div class="simplebar-height-auto-observer-wrapper">
+						<div class="simplebar-height-auto-observer"></div>
+					</div>
+					<div class="simplebar-mask">
+						<div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+							<div class="simplebar-content-wrapper" tabindex="0" role="region"
+								aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+								<div class="simplebar-content" style="padding: 0px;">
+									<a class="sidebar-brand" href="/src/pages/Dashboard/index.html">
+										<i class="bi bi-stack" style="color: cornflowerblue;"></i>
+										<span class="align-middle me-3">Dashboard</span>
+									</a>
+									<ul class="sidebar-nav">
+										<li class="sidebar-header">
+											Navigation
+										</li>
+										<li class="sidebar-item active">
+											<a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
+												<i class="fs-3 bi bi-sliders2-vertical"></i>
+												<span class="align-middle">Dashboards</span>
+												<span class="badge badge-sidebar-primary">5</span>
+											</a>
+											<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse"
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/default.html">Default</a></li>
+												<li class="sidebar-item active">
+													<a class="sidebar-link" href="/src/pages/Dashboard/analytics.html">Analytics</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/saas.html">SaaS</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/social.html">Social</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/crypto.html">Crypto</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-header">
+											Apps
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#ecommerce" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="shopping-bag"
+													class="lucide lucide-shopping-bag align-middle">
+													<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+													<path d="M3 6h18"></path>
+													<path d="M16 10a4 4 0 0 1-8 0"></path>
+												</svg> <span class="align-middle">E-Commerce</span>
+											</a>
+											<ul id="ecommerce" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/products.html">
+														Products <span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/productsDetails.html">
+														Product Details <span
+															class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/orders.html">
+														Orders <span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/customers.html">Customers</a>
+												</li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/invoice.html">Invoice</a>
+												</li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/pricing.html">Pricing</a>
+												</li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#projects" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="layout" class="lucide lucide-layout align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+													<path d="M3 9h18"></path>
+													<path d="M9 21V9"></path>
+												</svg> <span class="align-middle">Projects</span>
+											</a>
+											<ul id="projects" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/layout/projects/overview.html">Overview</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/layout/projects/details.html">Details</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/src/pages/Dashboard/layout/chat.html">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="list" class="lucide lucide-list align-middle">
+													<line x1="8" x2="21" y1="6" y2="6"></line>
+													<line x1="8" x2="21" y1="12" y2="12"></line>
+													<line x1="8" x2="21" y1="18" y2="18"></line>
+													<line x1="3" x2="3.01" y1="6" y2="6"></line>
+													<line x1="3" x2="3.01" y1="12" y2="12"></line>
+													<line x1="3" x2="3.01" y1="18" y2="18"></line>
+												</svg> <span class="align-middle">Chat</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/src/pages/Dashboard/layout/filemanager.html">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="files" class="lucide lucide-files align-middle">
+													<path d="M20 7h-3a2 2 0 0 1-2-2V2"></path>
+													<path
+														d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z">
+													</path>
+													<path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8"></path>
+												</svg> <span class="align-middle">File Manager</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/src/pages/Dashboard/layout/calendar.html">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="calendar" class="lucide lucide-calendar align-middle">
+													<path d="M8 2v4"></path>
+													<path d="M16 2v4"></path>
+													<rect width="18" height="18" x="3" y="4" rx="2"></rect>
+													<path d="M3 10h18"></path>
+												</svg> <span class="align-middle">Calendar</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#email" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="mail" class="lucide lucide-mail align-middle">
+													<rect width="20" height="16" x="2" y="4" rx="2"></rect>
+													<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+												</svg> <span class="align-middle">Email</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+											<ul id="email" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/email/inbox.html">Inbox</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/email/details.html">Details</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#tasks" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="trello" class="lucide lucide-trello align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+													<rect width="3" height="9" x="7" y="7"></rect>
+													<rect width="3" height="5" x="14" y="7"></rect>
+												</svg> <span class="align-middle">Tasks</span>
+											</a>
+											<ul id="tasks" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link" href="/src/pages/Dashboard/layout/tasks/list.html">
+														List
+														<span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/tasks/kanban.html">Kanban</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-header">
+											Pages
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#pages" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="layout" class="lucide lucide-layout align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+													<path d="M3 9h18"></path>
+													<path d="M9 21V9"></path>
+												</svg> <span class="align-middle">Pages</span>
+											</a>
+											<ul id="pages" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/pages/profile.html">Profile</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/pages/settings.html">Settings</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#auth" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="users" class="lucide lucide-users align-middle">
+													<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+													<circle cx="9" cy="7" r="4"></circle>
+													<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+													<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+												</svg> <span class="align-middle">Auth</span>
+												<span class="badge badge-sidebar-secondary">Special</span>
+											</a>
+											<ul id="auth" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/signin.html">Sign In</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/signincover.html">Sign In Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-sign-up.html">Sign Up</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-sign-up-cover.html">Sign Up Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-reset-password.html">Reset Password</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-reset-password-cover.html">Reset Password Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-lock-screen.html">Lock Screen</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-lock-screen-cover.html">Lock Screen Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-2fa.html">2FA</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-2fa-cover.html">2FA Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link" href="/src/pages/Dashboard/layout/pages/auth/auth-404.html">404
+														Page</a></li>
+												<li class="sidebar-item"><a class="sidebar-link" href="/src/pages/Dashboard/layout/pages/auth/auth-500.html">500
+														Page</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="simplebar-placeholder" style="width: 260px; height: 1643px;"></div>
+				</div>
+				<div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+					<div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+				</div>
+				<div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+					<div class="simplebar-scrollbar"
+						style="height: 232px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+				</div>
+			</div>
+		</nav>
+		<div class="main">
+			<div class="navbar navbar-expand navbar-bg">
+				<a class="sidebar-toggle">
+					<i class="hamburger align-self-center"></i>
+				</a>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fs-2 bi bi-envelope-fill"></i>
+								<span
+									class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success fs-5">4+</span>
+							</a>
+							<div drop="end" aria-labelledby="messagesDropdown" data-bs-popper="static" class="dropdown-menu-lg py-0 dropdown-menu dropdown-menu-end">
+								<div class="dropdown-menu-header position-relative">4 New Messages</div>
+								<div class="list-group">
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar.png"
+													alt="Ashley Briggs"></div>
+											<div class="ps-2 col-10">
+												<div>Ashley Briggs</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+												<div class="text-muted small mt-1">15m ago</div>
+											</div>
+										</div>
+									</div>
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar2.png"
+													alt="Chris Wood"></div>
+											<div class="ps-2 col-10">
+												<div>Chris Wood</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</div>
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar3.png"
+													alt="Stacie Hall"></div>
+											<div class="ps-2 col-10">
+												<div>Stacie Hall</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
+												<div class="text-muted small mt-1">4h ago</div>
+											</div>
+										</div>
+									</div>
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar5.png"
+													alt="Bertha Martin"></div>
+											<div class="ps-2 col-10">
+												<div>Bertha Martin</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dropdown-menu-footer dropdown-header" role="heading"><span class="text-muted">Show all messages</span>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fs-2 bi bi-bell-fill"></i>
+								<span
+									class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-5">99+</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"
+								data-bs-popper="static">
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/us.jpg" alt="English" width="20" class="align-middle me-1">
+									<span class="align-middle">English</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/spain.jpg" alt="Spanish" width="20" class="align-middle me-1">
+									<span class="align-middle">Spanish</span>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item nav-theme-toggle dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="themeToggle">
+								<i class="fs-2 bi bi-moon-stars-fill lightmode"></i>
+								<i class="fs-2 bi bi-sun-fill darkmode"></i>
+							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-flag dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown"
+								aria-expanded="true">
+								<img src="/src/assets/img/portfolio/dashboard/flags/us.jpg" alt="English">
+							</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"
+								data-bs-popper="static">
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/us.jpg" alt="English" width="20" class="align-middle me-1">
+									<span class="align-middle">English</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/spain.jpg" alt="Spanish" width="20" class="align-middle me-1">
+									<span class="align-middle">Spanish</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/germany.jpg" alt="German" width="20"
+										class="align-middle me-1">
+									<span class="align-middle">German</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/nl.png" alt="Dutch" width="20" class="align-middle me-1">
+									<span class="align-middle">Dutch</span>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+								<img src="/src/pages/Dashboard/img/avatar.png" class="avatar img-fluid rounded-circle me-1 mt-n2 mb-n2" alt="Chris Wood" width="40" height="38">
+								<span>Chris Wood</span>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+								<li><a class="dropdown-item" href="#"><i class="bi bi-person-fill-gear fs-3 me-1"></i>
+										Profile</a>
+								</li>
+								<li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill fs-3 me-1"></i>
+										Settings</a></li>
+								<li>
+									<hr class="dropdown-divider" />
+								</li>
+								<li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right fs-3 me-1"></i>
+										Logout</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="content">
+				<div class="p-0 container-fluid">
+					<h1 class="h3 mb-3">Settings</h1>
+					<div class="row">
+						<div class="col-xl-2 col-md-3">
+							<div class="card">
+								<div class="card-header">
+									<div class="mb-0 card-title h5">Profile Settings</div>
+								</div>
+								<div class="list-group list-group-flush"><a tag="a" href="#" data-rr-ui-event-key="#"
+										class="list-group-item active list-group-item-action">Account</a><a tag="a" href="#"
+										data-rr-ui-event-key="#" class="list-group-item list-group-item-action">Password</a><a tag="a"
+										href="#" data-rr-ui-event-key="#" class="list-group-item list-group-item-action">Privacy and
+										safety</a><a tag="a" href="#" data-rr-ui-event-key="#"
+										class="list-group-item list-group-item-action">Email notifications</a><a tag="a" href="#"
+										data-rr-ui-event-key="#" class="list-group-item list-group-item-action">Web notifications</a><a
+										tag="a" href="#" data-rr-ui-event-key="#"
+										class="list-group-item list-group-item-action">Widgets</a><a tag="a" href="#"
+										data-rr-ui-event-key="#" class="list-group-item list-group-item-action">Your data</a><a tag="a"
+										href="#" data-rr-ui-event-key="#" class="list-group-item list-group-item-action">Delete account
+									</a></div>
+							</div>
+						</div>
+						<div class="col-xl-10 col-md-9">
+							<div class="card">
+								<div class="card-header">
+									<div class="mb-0 card-title h5">Public info</div>
+								</div>
+								<div class="card-body">
+									<form class="">
+										<div class="row">
+											<div class="col-md-8">
+												<div class="mb-3"><label class="form-label" for="inputUsername">Username</label><input
+														placeholder="Username" type="text" id="inputUsername" class="form-control">
+												</div>
+												<div class="mb-3"><label class="form-label" for="inputBio">Biography</label><textarea
+														rows="2" placeholder="Tell something about yourself" id="inputBio"
+														class="form-control"></textarea></div>
+											</div>
+											<div class="col-md-4">
+												<div class="text-center"><img alt="Chris Wood" src="/src/assets/img/portfolio/dashboard/avatar/avatar-BAYNimTd.jpg"
+														class="rounded-circle img-responsive mt-2" width="128" height="128">
+													<div class="mt-2"><button type="button" class="btn btn-primary"><svg
+																aria-hidden="true" focusable="false" data-prefix="fas"
+																data-icon="upload" class="svg-inline--fa fa-upload " role="img"
+																xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+																<path fill="currentColor"
+																	d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3l-73.4 73.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l128-128c12.5-12.5 32.8-12.5 45.3 0l128 128c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L288 109.3zM64 352H192c0 35.3 28.7 64 64 64s64-28.7 64-64H448c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V416c0-35.3 28.7-64 64-64zM432 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z">
+																</path>
+															</svg> Upload</button></div><small>For best results, use an image at least
+														128px by 128px in .jpg format</small>
+												</div>
+											</div>
+										</div><button type="button" class="btn btn-primary">Save changes</button>
+									</form>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header">
+									<div class="mb-0 card-title h5">Private info</div>
+								</div>
+								<div class="card-body">
+									<form class="">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="mb-3"><label class="form-label" for="firstName">First name</label><input
+														name="text" placeholder="First name" type="text" id="firstName"
+														class="form-control"></div>
+											</div>
+											<div class="col-md-6">
+												<div class="mb-3"><label class="form-label" for="lastName">Last name</label><input
+														name="text" placeholder="Last name" type="text" id="lastName"
+														class="form-control"></div>
+											</div>
+										</div>
+										<div class="mb-3"><label class="form-label" for="email">Email</label><input name="email"
+												placeholder="Email" type="email" id="email" class="form-control"></div>
+										<div class="mb-3"><label class="form-label" for="address">Address</label><input name="address"
+												placeholder="1234 Main St" type="text" id="address" class="form-control"></div>
+										<div class="mb-3"><label class="form-label" for="address2">Address 2</label><input
+												name="address2" placeholder="Apartment, studio, or floor" type="text" id="address2"
+												class="form-control"></div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="mb-3"><label class="form-label" for="city">City</label><input name="city"
+														type="text" id="city" class="form-control"></div>
+											</div>
+											<div class="col-md-4">
+												<div class="mb-3"><label class="form-label" for="state">State</label><select
+														name="state" class="form-select" id="state">
+														<option>Choose...</option>
+														<option>...</option>
+													</select></div>
+											</div>
+											<div class="col-md-2">
+												<div class="mb-3"><label class="form-label" for="zipcode">Zip</label><input name="zip"
+														type="text" id="zipcode" class="form-control"></div>
+											</div>
+										</div><button type="button" class="btn btn-primary">Save changes</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="text-muted row">
+						<div class="text-start col-6">
+							<ul class="list-inline">
+								<li class="list-inline-item"><span class="text-muted" href="#">Support</span></li>
+								<li class="list-inline-item"><span class="text-muted" href="#">Help Center</span></li>
+								<li class="list-inline-item"><span class="text-muted" href="#">Privacy</span></li>
+								<li class="list-inline-item"><span class="text-muted" href="#">Terms of Service</span></li>
+							</ul>
+						</div>
+						<div class="text-end col-6">
+							<p class="mb-0">&copy; 2025 - <span href="/" class="text-muted">CM IT Consulting Services SpA</span></p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<!-- App js -->
+	<script src="/src/pages/Dashboard/js/Dashboard/app.js"></script>
+</body>
+
+</html>

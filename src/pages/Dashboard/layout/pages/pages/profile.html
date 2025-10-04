@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="/src/assets/favicon.ico" />
+
+	<!-- bootstrap 5.3.3 -->
+	<!-- <link rel="stylesheet" href="./css/bootstrap.rtl.min.css" type="text/css"> -->
+	<link href="/src/pages/Dashboard/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/src/pages/Dashboard/css/bootstrap-utilities.min.css" rel="stylesheet" type="text/css">
+	<!-- <script src="./js/bootstrap.min.js"></script> -->
+	<script src="/src/pages/Dashboard/js/bootstrap.bundle.min.js"></script>
+
+	<!-- font Awesome 6.4.0 -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+	<!-- font Awesome -->
+	<!-- <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+	<!-- Ionicons -->
+	<!-- <link href="./css/ionicons.min.css" rel="stylesheet" type="text/css" /> -->
+
+	<link href="/src/pages/Dashboard/css/dashboard.css" rel="stylesheet" type="text/css" />
+	<link href="/src/pages/Dashboard/css/app.css" rel="stylesheet" type="text/css" />
+	<link href="/src/pages/Dashboard/css/main.css" rel="stylesheet" type="text/css" />
+
+	<!-- JQuery  -->
+	<script src="/src/pages/Dashboard/js/jquery-3.7.1.min.js"></script>
+
+	<script type="module" crossorigin="" src="/src/pages/Dashboard/js/Dashboard/chartjs.js"></script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<div class="sidebar-content js-simplebar simplebar-scrollable-y" data-simplebar="init">
+				<div class="simplebar-wrapper" style="margin: 0px;">
+					<div class="simplebar-height-auto-observer-wrapper">
+						<div class="simplebar-height-auto-observer"></div>
+					</div>
+					<div class="simplebar-mask">
+						<div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+							<div class="simplebar-content-wrapper" tabindex="0" role="region"
+								aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+								<div class="simplebar-content" style="padding: 0px;">
+									<a class="sidebar-brand" href="/src/pages/Dashboard/index.html">
+										<i class="bi bi-stack" style="color: cornflowerblue;"></i>
+										<span class="align-middle me-3">Dashboard</span>
+									</a>
+									<ul class="sidebar-nav">
+										<li class="sidebar-header">
+											Navigation
+										</li>
+										<li class="sidebar-item active">
+											<a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
+												<i class="fs-3 bi bi-sliders2-vertical"></i>
+												<span class="align-middle">Dashboards</span>
+												<span class="badge badge-sidebar-primary">5</span>
+											</a>
+											<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse"
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/default.html">Default</a></li>
+												<li class="sidebar-item active">
+													<a class="sidebar-link" href="/src/pages/Dashboard/analytics.html">Analytics</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/saas.html">SaaS</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/social.html">Social</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/crypto.html">Crypto</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-header">
+											Apps
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#ecommerce" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="shopping-bag"
+													class="lucide lucide-shopping-bag align-middle">
+													<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+													<path d="M3 6h18"></path>
+													<path d="M16 10a4 4 0 0 1-8 0"></path>
+												</svg> <span class="align-middle">E-Commerce</span>
+											</a>
+											<ul id="ecommerce" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/products.html">
+														Products <span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/productsDetails.html">
+														Product Details <span
+															class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/orders.html">
+														Orders <span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/customers.html">Customers</a>
+												</li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/invoice.html">Invoice</a>
+												</li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/Ecommerce/pricing.html">Pricing</a>
+												</li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#projects" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="layout" class="lucide lucide-layout align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+													<path d="M3 9h18"></path>
+													<path d="M9 21V9"></path>
+												</svg> <span class="align-middle">Projects</span>
+											</a>
+											<ul id="projects" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/layout/projects/overview.html">Overview</a></li>
+												<li class="sidebar-item">
+													<a class="sidebar-link" href="/src/pages/Dashboard/layout/projects/details.html">Details</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/src/pages/Dashboard/layout/chat.html">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="list" class="lucide lucide-list align-middle">
+													<line x1="8" x2="21" y1="6" y2="6"></line>
+													<line x1="8" x2="21" y1="12" y2="12"></line>
+													<line x1="8" x2="21" y1="18" y2="18"></line>
+													<line x1="3" x2="3.01" y1="6" y2="6"></line>
+													<line x1="3" x2="3.01" y1="12" y2="12"></line>
+													<line x1="3" x2="3.01" y1="18" y2="18"></line>
+												</svg> <span class="align-middle">Chat</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/src/pages/Dashboard/layout/filemanager.html">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="files" class="lucide lucide-files align-middle">
+													<path d="M20 7h-3a2 2 0 0 1-2-2V2"></path>
+													<path
+														d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z">
+													</path>
+													<path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8"></path>
+												</svg> <span class="align-middle">File Manager</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a class="sidebar-link" href="/src/pages/Dashboard/layout/calendar.html">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="calendar" class="lucide lucide-calendar align-middle">
+													<path d="M8 2v4"></path>
+													<path d="M16 2v4"></path>
+													<rect width="18" height="18" x="3" y="4" rx="2"></rect>
+													<path d="M3 10h18"></path>
+												</svg> <span class="align-middle">Calendar</span>
+											</a>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#email" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="mail" class="lucide lucide-mail align-middle">
+													<rect width="20" height="16" x="2" y="4" rx="2"></rect>
+													<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+												</svg> <span class="align-middle">Email</span>
+												<span class="badge badge-sidebar-primary">New</span>
+											</a>
+											<ul id="email" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/email/inbox.html">Inbox</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/email/details.html">Details</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#tasks" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="trello" class="lucide lucide-trello align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+													<rect width="3" height="9" x="7" y="7"></rect>
+													<rect width="3" height="5" x="14" y="7"></rect>
+												</svg> <span class="align-middle">Tasks</span>
+											</a>
+											<ul id="tasks" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link" href="/src/pages/Dashboard/layout/tasks/list.html">
+														List
+														<span class="badge badge-sidebar-primary">New</span>
+													</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/tasks/kanban.html">Kanban</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-header">
+											Pages
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#pages" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="layout" class="lucide lucide-layout align-middle">
+													<rect width="18" height="18" x="3" y="3" rx="2"></rect>
+													<path d="M3 9h18"></path>
+													<path d="M9 21V9"></path>
+												</svg> <span class="align-middle">Pages</span>
+											</a>
+											<ul id="pages" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/pages/profile.html">Profile</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/pages/settings.html">Settings</a></li>
+											</ul>
+										</li>
+										<li class="sidebar-item">
+											<a data-bs-target="#auth" data-bs-toggle="collapse"
+												class="sidebar-link collapsed">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+													viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+													data-lucide="users" class="lucide lucide-users align-middle">
+													<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+													<circle cx="9" cy="7" r="4"></circle>
+													<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+													<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+												</svg> <span class="align-middle">Auth</span>
+												<span class="badge badge-sidebar-secondary">Special</span>
+											</a>
+											<ul id="auth" class="sidebar-dropdown list-unstyled collapse "
+												data-bs-parent="#sidebar">
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/signin.html">Sign In</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/signincover.html">Sign In Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-sign-up.html">Sign Up</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-sign-up-cover.html">Sign Up Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-reset-password.html">Reset Password</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-reset-password-cover.html">Reset Password Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-lock-screen.html">Lock Screen</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-lock-screen-cover.html">Lock Screen Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-2fa.html">2FA</a></li>
+												<li class="sidebar-item"><a class="sidebar-link"
+														href="/src/pages/Dashboard/layout/pages/auth/auth-2fa-cover.html">2FA Cover</a></li>
+												<li class="sidebar-item"><a class="sidebar-link" href="/src/pages/Dashboard/layout/pages/auth/auth-404.html">404
+														Page</a></li>
+												<li class="sidebar-item"><a class="sidebar-link" href="/src/pages/Dashboard/layout/pages/auth/auth-500.html">500
+														Page</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="simplebar-placeholder" style="width: 260px; height: 1643px;"></div>
+				</div>
+				<div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+					<div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+				</div>
+				<div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+					<div class="simplebar-scrollbar"
+						style="height: 232px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+				</div>
+			</div>
+		</nav>
+		<div class="main">
+			<div class="navbar navbar-expand navbar-bg">
+				<a class="sidebar-toggle">
+					<i class="hamburger align-self-center"></i>
+				</a>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fs-2 bi bi-envelope-fill"></i>
+								<span
+									class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success fs-5">4+</span>
+							</a>
+							<div drop="end" aria-labelledby="messagesDropdown" data-bs-popper="static" class="dropdown-menu-lg py-0 dropdown-menu dropdown-menu-end">
+								<div class="dropdown-menu-header position-relative">4 New Messages</div>
+								<div class="list-group">
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar.png"
+													alt="Ashley Briggs"></div>
+											<div class="ps-2 col-10">
+												<div>Ashley Briggs</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+												<div class="text-muted small mt-1">15m ago</div>
+											</div>
+										</div>
+									</div>
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar2.png"
+													alt="Chris Wood"></div>
+											<div class="ps-2 col-10">
+												<div>Chris Wood</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</div>
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar3.png"
+													alt="Stacie Hall"></div>
+											<div class="ps-2 col-10">
+												<div>Stacie Hall</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
+												<div class="text-muted small mt-1">4h ago</div>
+											</div>
+										</div>
+									</div>
+									<div class="list-group-item">
+										<div class="align-items-center g-0 row">
+											<div class="col-2"><img class="avatar img-fluid rounded-circle" src="/src/pages/Dashboard/img/avatar5.png"
+													alt="Bertha Martin"></div>
+											<div class="ps-2 col-10">
+												<div>Bertha Martin</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="dropdown-menu-footer dropdown-header" role="heading"><span class="text-muted">Show all messages</span>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<i class="fs-2 bi bi-bell-fill"></i>
+								<span
+									class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-5">99+</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"
+								data-bs-popper="static">
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/us.jpg" alt="English" width="20" class="align-middle me-1">
+									<span class="align-middle">English</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/spain.jpg" alt="Spanish" width="20" class="align-middle me-1">
+									<span class="align-middle">Spanish</span>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item nav-theme-toggle dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="themeToggle">
+								<i class="fs-2 bi bi-moon-stars-fill lightmode"></i>
+								<i class="fs-2 bi bi-sun-fill darkmode"></i>
+							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-flag dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown"
+								aria-expanded="true">
+								<img src="/src/assets/img/portfolio/dashboard/flags/us.jpg" alt="English">
+							</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown"
+								data-bs-popper="static">
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/us.jpg" alt="English" width="20" class="align-middle me-1">
+									<span class="align-middle">English</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/spain.jpg" alt="Spanish" width="20" class="align-middle me-1">
+									<span class="align-middle">Spanish</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/germany.jpg" alt="German" width="20"
+										class="align-middle me-1">
+									<span class="align-middle">German</span>
+								</a>
+								<a class="dropdown-item" href="#">
+									<img src="/src/assets/img/portfolio/dashboard/flags/nl.png" alt="Dutch" width="20" class="align-middle me-1">
+									<span class="align-middle">Dutch</span>
+								</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown mx-2">
+							<a class="nav-icon dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+								<img src="/src/pages/Dashboard/img/avatar.png" class="avatar img-fluid rounded-circle me-1 mt-n2 mb-n2" alt="Chris Wood" width="40" height="38">
+								<span>Chris Wood</span>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+								<li><a class="dropdown-item" href="#"><i class="bi bi-person-fill-gear fs-3 me-1"></i>
+										Profile</a>
+								</li>
+								<li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill fs-3 me-1"></i>
+										Settings</a></li>
+								<li>
+									<hr class="dropdown-divider" />
+								</li>
+								<li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right fs-3 me-1"></i>
+										Logout</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="content">
+				<div class="p-0 container-fluid">
+					<h1 class="h3 mb-3">Profile</h1>
+					<div class="row">
+						<div class="col-xl-3 col-md-4">
+							<div class="card">
+								<div class="card-header">
+									<div class="mb-0 card-title h5">Profile Details</div>
+								</div>
+								<div class="text-center card-body"><img src="/src/assets/img/portfolio/dashboard/avatar/avatar-4-CzTIGlzK.jpg" alt="Stacie Hall"
+										class="img-fluid rounded-circle mb-2" width="128" height="128">
+									<div class="mb-0 card-title h5">Stacie Hall</div>
+									<div class="text-muted mb-2">Lead Developer</div>
+									<div><button type="button" class="me-1 btn btn-primary btn-sm">Follow</button><button type="button"
+											class="btn btn-primary btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+												height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square">
+												<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+											</svg> Message</button></div>
+								</div>
+								<hr class="my-0">
+								<div class="card-body">
+									<div class="card-title h5">Skills</div><span class="me-2 my-1 badge bg-primary">HTML</span><span
+										class="me-2 my-1 badge bg-primary">JavaScript</span><span
+										class="me-2 my-1 badge bg-primary">Sass</span><span
+										class="me-2 my-1 badge bg-primary">Angular</span><span
+										class="me-2 my-1 badge bg-primary">Vue</span><span
+										class="me-2 my-1 badge bg-primary">React</span><span
+										class="me-2 my-1 badge bg-primary">Redux</span><span
+										class="me-2 my-1 badge bg-primary">UI</span><span class="me-2 my-1 badge bg-primary">UX</span>
+								</div>
+								<hr class="my-0">
+								<div class="card-body">
+									<div class="card-title h5">About</div>
+									<ul class="list-unstyled mb-0">
+										<li class="mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+												viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home me-1">
+												<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+												<polyline points="9 22 9 12 15 12 15 22"></polyline>
+											</svg> Lives in <a href="/dashboard/default">San Francisco, SA</a></li>
+										<li class="mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+												viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase me-1">
+												<path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+												<rect width="20" height="14" x="2" y="6" rx="2"></rect>
+											</svg> Works at <a href="/dashboard/default">GitHub</a></li>
+										<li class="mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+												viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin me-1">
+												<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+												<circle cx="12" cy="10" r="3"></circle>
+											</svg> From <a href="/dashboard/default">Boston</a></li>
+									</ul>
+								</div>
+								<hr class="my-0">
+								<div class="card-body">
+									<div class="card-title h5">Elsewhere</div>
+									<ul class="list-unstyled mb-0">
+										<li class="mb-1"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe"
+												class="svg-inline--fa fa-globe fa-fw me-1" role="img" xmlns="http://www.w3.org/2000/svg"
+												viewBox="0 0 512 512">
+												<path fill="currentColor"
+													d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z">
+												</path>
+											</svg><a href="/dashboard/default">staciehall.co</a></li>
+										<li class="mb-1"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+												class="svg-inline--fa fa-twitter fa-fw me-1" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+												<path fill="currentColor"
+													d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+												</path>
+											</svg><a href="/dashboard/default">Twitter</a></li>
+										<li class="mb-1"><svg aria-hidden="true" focusable="false" data-prefix="fab"
+												data-icon="facebook" class="svg-inline--fa fa-facebook fa-fw me-1" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+												<path fill="currentColor"
+													d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z">
+												</path>
+											</svg><a href="/dashboard/default">Facebook</a></li>
+										<li class="mb-1"><svg aria-hidden="true" focusable="false" data-prefix="fab"
+												data-icon="instagram" class="svg-inline--fa fa-instagram fa-fw me-1" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+												<path fill="currentColor"
+													d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+												</path>
+											</svg><a href="/dashboard/default">Instagram</a></li>
+										<li class="mb-1"><svg aria-hidden="true" focusable="false" data-prefix="fab"
+												data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-fw me-1" role="img"
+												xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+												<path fill="currentColor"
+													d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+												</path>
+											</svg><a href="/dashboard/default">LinkedIn</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-9 col-md-8">
+							<div class="card">
+								<div class="card-header">
+									<div class="mb-0 card-title h5">Activities</div>
+								</div>
+								<div class="card-body">
+									<div class="d-flex"><img src="/src/assets/img/portfolio/dashboard/avatar/avatar-5-5BXUJltV.jpg" width="36" height="36"
+											class="rounded-circle me-2" alt="Ashley Briggs">
+										<div class="flex-grow-1"><small class="float-end text-navy">5m ago</small><strong>Ashley
+												Briggs</strong> started following <strong>Stacie Hall</strong><br><small
+												class="text-muted">Today 7:51 pm</small><br></div>
+									</div>
+									<hr>
+									<div class="d-flex"><img src="/src/assets/img/portfolio/dashboard/avatar/avatar-BAYNimTd.jpg" width="36" height="36"
+											class="rounded-circle me-2" alt="Chris Wood">
+										<div class="flex-grow-1"><small class="float-end text-navy">30m ago</small><strong>Chris
+												Wood</strong> posted something on <strong>Stacie Hall</strong>'s timeline<br><small
+												class="text-muted">Today 7:21 pm</small>
+											<div class="border text-sm text-muted p-2 mt-1">Etiam rhoncus. Maecenas tempus, tellus eget
+												condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
+												Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et
+												ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis
+												ante.</div><button type="button" class="mt-1 btn btn-danger btn-sm"><svg
+													aria-hidden="true" focusable="false" data-prefix="far" data-icon="heart"
+													class="svg-inline--fa fa-heart fa-fw " role="img" xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 512 512">
+													<path fill="currentColor"
+														d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z">
+													</path>
+												</svg> Like</button>
+										</div>
+									</div>
+									<hr>
+									<div class="d-flex"><img src="/src/assets/img/portfolio/dashboard/avatar/avatar-4-CzTIGlzK.jpg" width="36" height="36"
+											class="rounded-circle me-2" alt="Stacie Hall">
+										<div class="flex-grow-1"><small class="float-end text-navy">1h ago</small><strong>Stacie
+												Hall</strong> posted a new blog<br><small class="text-muted">Today 6:35 pm</small></div>
+									</div>
+									<hr>
+									<div class="d-flex"><img src="/src/assets/img/portfolio/dashboard/avatar/avatar-2-4fapEwlj.jpg" width="36" height="36"
+											class="rounded-circle me-2" alt="Carl Jenkins">
+										<div class="flex-grow-1"><small class="float-end text-navy">3h ago</small><strong>Carl
+												Jenkins</strong> posted two photos on <strong>Stacie Hall</strong>'s timeline<br><small
+												class="text-muted">Today 5:12 pm</small>
+											<div class="g-0 mt-1 row">
+												<div class="col-xl-3 col-lg-4 col-md-4 col-6"><img src="/src/assets/img/portfolio/dashboard/unsplash/unsplash-1-398fddcU.jpg"
+														class="img-fluid pe-2" alt="Unsplash"></div>
+												<div class="col-xl-3 col-lg-4 col-md-4 col-6"><img src="/src/assets/img/portfolio/dashboard/unsplash/unsplash-2-BtW-DipI.jpg"
+														class="img-fluid pe-2" alt="Unsplash"></div>
+											</div><button type="button" class="mt-1 btn btn-danger btn-sm"><svg aria-hidden="true"
+													focusable="false" data-prefix="far" data-icon="heart"
+													class="svg-inline--fa fa-heart fa-fw " role="img" xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 512 512">
+													<path fill="currentColor"
+														d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z">
+													</path>
+												</svg> Like</button>
+										</div>
+									</div>
+									<hr>
+									<div class="d-flex"><img src="/src/assets/img/portfolio/dashboard/avatar/avatar-2-4fapEwlj.jpg" width="36" height="36"
+											class="rounded-circle me-2" alt="Carl Jenkins">
+										<div class="flex-grow-1"><small class="float-end text-navy">1d ago</small><strong>Carl
+												Jenkins</strong> started following <strong>Stacie Hall</strong><br><small
+												class="text-muted">Yesterday 3:12 pm</small>
+											<div class="d-flex mt-1"><img src="/src/assets/img/portfolio/dashboard/avatar/avatar-4-CzTIGlzK.jpg" width="36" height="36"
+													class="rounded-circle me-2" alt="Stacie Hall">
+												<div class="flex-grow-1 ps-3">
+													<div class="border text-sm text-muted p-2 mt-1">Nam quam nunc, blandit vel, luctus
+														pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="d-flex"><img src="/src/assets/img/portfolio/dashboard/avatar/avatar-4-CzTIGlzK.jpg" width="36" height="36"
+											class="rounded-circle me-2" alt="Stacie Hall">
+										<div class="flex-grow-1"><small class="float-end text-navy">1d ago</small><strong>Stacie
+												Hall</strong> posted a new blog<br><small class="text-muted">Yesterday 2:43 pm</small>
+										</div>
+									</div>
+									<hr>
+									<div class="d-flex"><img src="/src/assets/img/portfolio/dashboard/avatar/avatar-BAYNimTd.jpg" width="36" height="36"
+											class="rounded-circle me-2" alt="Chris Wood">
+										<div class="flex-grow-1"><small class="float-end text-navy">1d ago</small><strong>Chris
+												Wood</strong> started following <strong>Stacie Hall</strong><br><small
+												class="text-muted">Yesterdag 1:51 pm</small></div>
+									</div>
+									<hr>
+									<div class="d-grid"><button type="button" class="btn btn-primary">Load more</button></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="text-muted row">
+						<div class="text-start col-6">
+							<ul class="list-inline">
+								<li class="list-inline-item"><span class="text-muted" href="#">Support</span></li>
+								<li class="list-inline-item"><span class="text-muted" href="#">Help Center</span></li>
+								<li class="list-inline-item"><span class="text-muted" href="#">Privacy</span></li>
+								<li class="list-inline-item"><span class="text-muted" href="#">Terms of Service</span></li>
+							</ul>
+						</div>
+						<div class="text-end col-6">
+							<p class="mb-0">&copy; 2025 - <span href="/" class="text-muted">CM IT Consulting Services SpA</span></p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<!-- App js -->
+	<script src="/src/pages/Dashboard/js/Dashboard/app.js"></script>
+</body>
+
+</html>
